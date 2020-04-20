@@ -31,9 +31,6 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 elixir_benchmarks-*.tar
 
-# Output directory
-/output
-
 # Personal directory
 /my
 
