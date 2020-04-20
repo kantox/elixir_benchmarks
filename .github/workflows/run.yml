@@ -1,22 +1,28 @@
 name: Run Benchee
 
-on: [push]
+on: push
+
+env:
+  ELIXIR_VERSION: 1.10.2
+  OTP_VERSION: 22.3
 
 jobs:
   run:
+    name: Run Benchee
     runs-on: ubuntu-latest
-    name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
-    strategy:
-      matrix:
-        otp: [21.3, 22.3]
-        elixir: [1.9.4, 1.10.2]
+
     steps:
+      - name: Checkout
       - uses: actions/checkout@v2
+
+      - name: Setup Elixir v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}
       - uses: actions/setup-elixir@v1
         with:
-          otp-version: ${{matrix.otp}}
-          elixir-version: ${{matrix.elixir}}
+          otp-version: ${{ env.OTP_VERSION }}
+          elixir-version: ${{ env.ELIXIR_VERSION }}
+
       - name: Install → Compile dependencies
         run: mix do deps.get, compile
+
       - name: Run Benchmarks
         run: mix do ensure_output_folder_exists, all_benchmarks
