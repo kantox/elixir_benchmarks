@@ -3,7 +3,7 @@ name: Run Benchee
 on: [push]
 
 jobs:
-  test:
+  run:
     runs-on: ubuntu-latest
     name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     strategy:
