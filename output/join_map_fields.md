@@ -1,8 +1,6 @@
 # Benchmark
 
-Don’t trust these results if you are reading this from GitHub.
-
-You must run locally to have control of the host.
+Benchmark run from 2020-04-20 15:43:54.568121Z UTC
 
 ## System
 
@@ -64,41 +62,41 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap; text-align: right">2.51 M</td>
-    <td style="white-space: nowrap; text-align: right">398.10 ns</td>
-    <td style="white-space: nowrap; text-align: right">±5395.19%</td>
+    <td style="white-space: nowrap; text-align: right">2.47 M</td>
+    <td style="white-space: nowrap; text-align: right">405.30 ns</td>
+    <td style="white-space: nowrap; text-align: right">±2551.41%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">990 ns</td>
+    <td style="white-space: nowrap; text-align: right">1990 ns</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Using Enum</td>
-    <td style="white-space: nowrap; text-align: right">2.09 M</td>
-    <td style="white-space: nowrap; text-align: right">478.02 ns</td>
-    <td style="white-space: nowrap; text-align: right">±2834.34%</td>
+    <td style="white-space: nowrap; text-align: right">2.12 M</td>
+    <td style="white-space: nowrap; text-align: right">472.03 ns</td>
+    <td style="white-space: nowrap; text-align: right">±2223.87%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Enum.map_join/3</td>
-    <td style="white-space: nowrap; text-align: right">2.03 M</td>
-    <td style="white-space: nowrap; text-align: right">492.09 ns</td>
-    <td style="white-space: nowrap; text-align: right">±4114.03%</td>
+    <td style="white-space: nowrap; text-align: right">1.94 M</td>
+    <td style="white-space: nowrap; text-align: right">515.24 ns</td>
+    <td style="white-space: nowrap; text-align: right">±5282.78%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Using for each</td>
-    <td style="white-space: nowrap; text-align: right">1.68 M</td>
-    <td style="white-space: nowrap; text-align: right">596.15 ns</td>
-    <td style="white-space: nowrap; text-align: right">±5493.06%</td>
+    <td style="white-space: nowrap; text-align: right">1.73 M</td>
+    <td style="white-space: nowrap; text-align: right">578.90 ns</td>
+    <td style="white-space: nowrap; text-align: right">±5447.63%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Using Stream</td>
-    <td style="white-space: nowrap; text-align: right">1.01 M</td>
-    <td style="white-space: nowrap; text-align: right">986.25 ns</td>
-    <td style="white-space: nowrap; text-align: right">±2825.02%</td>
+    <td style="white-space: nowrap; text-align: right">1.06 M</td>
+    <td style="white-space: nowrap; text-align: right">942.47 ns</td>
+    <td style="white-space: nowrap; text-align: right">±2927.40%</td>
     <td style="white-space: nowrap; text-align: right">990 ns</td>
     <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
@@ -111,28 +109,28 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap;text-align: right">2.51 M</td>
+    <td style="white-space: nowrap;text-align: right">2.47 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Using Enum</td>
-    <td style="white-space: nowrap; text-align: right">2.09 M</td>
-    <td style="white-space: nowrap; text-align: right">1.2x</td>
+    <td style="white-space: nowrap; text-align: right">2.12 M</td>
+    <td style="white-space: nowrap; text-align: right">1.16x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Enum.map_join/3</td>
-    <td style="white-space: nowrap; text-align: right">2.03 M</td>
-    <td style="white-space: nowrap; text-align: right">1.24x</td>
+    <td style="white-space: nowrap; text-align: right">1.94 M</td>
+    <td style="white-space: nowrap; text-align: right">1.27x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Using for each</td>
-    <td style="white-space: nowrap; text-align: right">1.68 M</td>
-    <td style="white-space: nowrap; text-align: right">1.5x</td>
+    <td style="white-space: nowrap; text-align: right">1.73 M</td>
+    <td style="white-space: nowrap; text-align: right">1.43x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Using Stream</td>
-    <td style="white-space: nowrap; text-align: right">1.01 M</td>
-    <td style="white-space: nowrap; text-align: right">2.48x</td>
+    <td style="white-space: nowrap; text-align: right">1.06 M</td>
+    <td style="white-space: nowrap; text-align: right">2.33x</td>
   </tr>
 </table>
 <hr/>

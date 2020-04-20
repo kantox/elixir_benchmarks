@@ -20,13 +20,7 @@ Benchee.run(
   },
   formatters: [
     Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown,
-     file: "output/join_map_fields.md",
-     description: """
-     Don’t trust these results if you are reading this from GitHub.
-
-     You must run locally to have control of the host.
-     """}
+    {Benchee.Formatters.Markdown, file: "output/join_map_fields.md"}
   ],
   inputs: %{
     "map" => %{source: "foo", pair: "EURUSD", tenor: 42}
