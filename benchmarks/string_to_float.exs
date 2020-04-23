@@ -10,6 +10,6 @@ Benchee.run(
   },
   formatters: [
     Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: "output/string_to_float.md"}
+    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
   ]
 )

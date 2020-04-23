@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-21 11:23:09.092791Z UTC
+Benchmark run from 2020-04-23 06:04:44.524672Z UTC
 
 ## System
 
@@ -61,18 +61,18 @@ Run Time
     <th style="text-align: right">99th&nbsp;%</th>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Keywords</td>
-    <td style="white-space: nowrap; text-align: right">6.68 M</td>
-    <td style="white-space: nowrap; text-align: right">149.80 ns</td>
-    <td style="white-space: nowrap; text-align: right">±1632.49%</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap; text-align: right">3.00 M</td>
+    <td style="white-space: nowrap; text-align: right">332.90 ns</td>
+    <td style="white-space: nowrap; text-align: right">±7549.22%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Get in</td>
-    <td style="white-space: nowrap; text-align: right">5.37 M</td>
-    <td style="white-space: nowrap; text-align: right">186.30 ns</td>
-    <td style="white-space: nowrap; text-align: right">±1789.52%</td>
+    <td style="white-space: nowrap">Kernel.pop_in/2</td>
+    <td style="white-space: nowrap; text-align: right">2.46 M</td>
+    <td style="white-space: nowrap; text-align: right">406.71 ns</td>
+    <td style="white-space: nowrap; text-align: right">±8682.97%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
@@ -84,14 +84,14 @@ Comparison
     <th style="text-align: right">IPS</th>
     <th style="text-align: right">Slower</th>
   <tr>
-    <td style="white-space: nowrap">Keywords</td>
-    <td style="white-space: nowrap;text-align: right">6.68 M</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap;text-align: right">3.00 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Get in</td>
-    <td style="white-space: nowrap; text-align: right">5.37 M</td>
-    <td style="white-space: nowrap; text-align: right">1.24x</td>
+    <td style="white-space: nowrap">Kernel.pop_in/2</td>
+    <td style="white-space: nowrap; text-align: right">2.46 M</td>
+    <td style="white-space: nowrap; text-align: right">1.22x</td>
   </tr>
 </table>
 <hr/>

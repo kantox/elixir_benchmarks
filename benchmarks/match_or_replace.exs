@@ -11,7 +11,7 @@ Benchee.run(
   },
   formatters: [
     Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: "output/match_or_replace.md"}
+    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
   ],
   inputs: %{
     "str" => "lib/api_gateway/controllers/zendesk/article_controller"

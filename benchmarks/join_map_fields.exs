@@ -20,7 +20,7 @@ Benchee.run(
   },
   formatters: [
     Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: "output/join_map_fields.md"}
+    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
   ],
   inputs: %{
     "map" => %{source: "foo", pair: "EURUSD", tenor: 42}

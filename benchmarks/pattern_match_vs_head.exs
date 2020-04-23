@@ -9,7 +9,7 @@ Benchee.run(
   },
   formatters: [
     Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: "output/pattern_match_vs_head.md"}
+    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
   ],
   inputs: %{
     "list" => [:moo, :other]

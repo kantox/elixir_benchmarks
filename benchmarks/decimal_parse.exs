@@ -9,6 +9,6 @@ Benchee.run(
   },
   formatters: [
     Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: "output/decimal_parse.md"}
+    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
   ]
 )
