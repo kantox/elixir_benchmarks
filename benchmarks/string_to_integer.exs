@@ -1,14 +1,14 @@
 Benchee.run(
   %{
-    "String.to_integer/1" => fn ->
-      String.to_integer("42")
+    "String.to_integer/1" => fn list ->
+      Enum.each(list, &String.to_integer/1)
     end,
-    "Integer.parse/1" => fn ->
-      Integer.parse("42") |> elem(1)
+    "Integer.parse/1" => fn list ->
+      Enum.each(list, fn e ->
+        e |> Integer.parse() |> elem(0)
+      end)
     end
   },
-  formatters: [
-    Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
-  ]
+  formatters: KEB.formatter(__ENV__.file, :integer, :to_string),
+  inputs: KEB.get_data(:integer, :to_string)
 )

@@ -1,14 +1,15 @@
 Benchee.run(
   %{
-    "Atom.to_string/1" => fn ->
-      Atom.to_string(:foo)
+    "`Atom.to_string/1`" => fn list ->
+      Enum.each(list, &Atom.to_string/1)
     end,
-    "Kernel.to_string/1" => fn ->
-      to_string(:foo)
+    "`Kernel.to_string/1`" => fn list ->
+      Enum.each(list, &to_string/1)
+    end,
+    "concatenate inside a string" => fn list ->
+      Enum.each(list, &"#{&1}")
     end
   },
-  formatters: [
-    Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
-  ]
+  formatters: KEB.formatter(__ENV__.file, :atom),
+  inputs: KEB.get_data(:atom)
 )

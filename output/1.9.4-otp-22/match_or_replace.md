@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-21 11:23:31.513195Z UTC
+Benchmark run from 2020-04-27 04:50:16.237621Z UTC
 
 ## System
 
@@ -21,10 +21,10 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">32 GB</td>
   </tr><tr>
     <th style="white-space: nowrap">Elixir Version</th>
-    <td style="white-space: nowrap">1.10.2</td>
+    <td style="white-space: nowrap">1.9.4</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.2.6</td>
+    <td style="white-space: nowrap">22.3.2</td>
   </tr>
 </table>
 
@@ -62,19 +62,19 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap; text-align: right">3.06 M</td>
+    <td style="white-space: nowrap; text-align: right">2.99 M</td>
     <td style="white-space: nowrap; text-align: right">0.33 μs</td>
-    <td style="white-space: nowrap; text-align: right">±2794.34%</td>
+    <td style="white-space: nowrap; text-align: right">±3143.42%</td>
     <td style="white-space: nowrap; text-align: right">0 μs</td>
-    <td style="white-space: nowrap; text-align: right">1 μs</td>
+    <td style="white-space: nowrap; text-align: right">0.99 μs</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">String replace</td>
-    <td style="white-space: nowrap; text-align: right">0.70 M</td>
-    <td style="white-space: nowrap; text-align: right">1.43 μs</td>
-    <td style="white-space: nowrap; text-align: right">±1421.39%</td>
-    <td style="white-space: nowrap; text-align: right">1 μs</td>
-    <td style="white-space: nowrap; text-align: right">2 μs</td>
+    <td style="white-space: nowrap; text-align: right">0.62 M</td>
+    <td style="white-space: nowrap; text-align: right">1.62 μs</td>
+    <td style="white-space: nowrap; text-align: right">±1384.27%</td>
+    <td style="white-space: nowrap; text-align: right">0.99 μs</td>
+    <td style="white-space: nowrap; text-align: right">1.99 μs</td>
   </tr>
 </table>
 Comparison
@@ -85,13 +85,13 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap;text-align: right">3.06 M</td>
+    <td style="white-space: nowrap;text-align: right">2.99 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">String replace</td>
-    <td style="white-space: nowrap; text-align: right">0.70 M</td>
-    <td style="white-space: nowrap; text-align: right">4.38x</td>
+    <td style="white-space: nowrap; text-align: right">0.62 M</td>
+    <td style="white-space: nowrap; text-align: right">4.85x</td>
   </tr>
 </table>
 <hr/>

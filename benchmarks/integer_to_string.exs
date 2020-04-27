@@ -1,17 +1,15 @@
 Benchee.run(
   %{
-    "to_string/1" => fn ->
-      to_string(42)
+    "`Kernel.to_string/1`" => fn list ->
+      Enum.each(list, &to_string/1)
     end,
-    "Integer.to_string/1" => fn ->
-      Integer.to_string(42)
+    "`Integer.to_string/1`" => fn list ->
+      Enum.each(list, &Integer.to_string/1)
     end,
-    "concatenate inside string" => fn ->
-      "#{42}"
+    "concatenate inside string" => fn list ->
+      Enum.each(list, &"#{&1}")
     end
   },
-  formatters: [
-    Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
-  ]
+  formatters: KEB.formatter(__ENV__.file, :integer),
+  inputs: KEB.get_data(:integer)
 )

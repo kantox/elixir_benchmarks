@@ -9,10 +9,7 @@ Benchee.run(
       str |> String.replace("lib/", "") |> String.replace("controllers/", "")
     end
   },
-  formatters: [
-    Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
-  ],
+  formatters: KEB.formatter(__ENV__.file),
   inputs: %{
     "str" => "lib/api_gateway/controllers/zendesk/article_controller"
   }

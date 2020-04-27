@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-21 11:20:36.256464Z UTC
+Benchmark run from 2020-04-27 04:46:38.607660Z UTC
 
 ## System
 
@@ -21,10 +21,10 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">32 GB</td>
   </tr><tr>
     <th style="white-space: nowrap">Elixir Version</th>
-    <td style="white-space: nowrap">1.10.2</td>
+    <td style="white-space: nowrap">1.9.4</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.2.6</td>
+    <td style="white-space: nowrap">22.3.2</td>
   </tr>
 </table>
 
@@ -47,6 +47,9 @@ Benchmark suite executing with the following configuration:
 
 ## Statistics
 
+
+__Input: map__
+
 Run Time
 <table style="width: 1%">
   <tr>
@@ -58,27 +61,19 @@ Run Time
     <th style="text-align: right">99th&nbsp;%</th>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Float.to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">1.56 M</td>
-    <td style="white-space: nowrap; text-align: right">640.58 ns</td>
-    <td style="white-space: nowrap; text-align: right">±3696.66%</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">1.50 M</td>
-    <td style="white-space: nowrap; text-align: right">668.60 ns</td>
-    <td style="white-space: nowrap; text-align: right">±3591.88%</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap; text-align: right">2.52 M</td>
+    <td style="white-space: nowrap; text-align: right">397.16 ns</td>
+    <td style="white-space: nowrap; text-align: right">±8376.23%</td>
+    <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">concatenate inside string</td>
-    <td style="white-space: nowrap; text-align: right">1.44 M</td>
-    <td style="white-space: nowrap; text-align: right">693.74 ns</td>
-    <td style="white-space: nowrap; text-align: right">±3241.39%</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap">Kernel.pop_in/2</td>
+    <td style="white-space: nowrap; text-align: right">2.13 M</td>
+    <td style="white-space: nowrap; text-align: right">468.94 ns</td>
+    <td style="white-space: nowrap; text-align: right">±9786.85%</td>
+    <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
 </table>
@@ -89,19 +84,14 @@ Comparison
     <th style="text-align: right">IPS</th>
     <th style="text-align: right">Slower</th>
   <tr>
-    <td style="white-space: nowrap">Float.to_string/1</td>
-    <td style="white-space: nowrap;text-align: right">1.56 M</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap;text-align: right">2.52 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">1.50 M</td>
-    <td style="white-space: nowrap; text-align: right">1.04x</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">concatenate inside string</td>
-    <td style="white-space: nowrap; text-align: right">1.44 M</td>
-    <td style="white-space: nowrap; text-align: right">1.08x</td>
+    <td style="white-space: nowrap">Kernel.pop_in/2</td>
+    <td style="white-space: nowrap; text-align: right">2.13 M</td>
+    <td style="white-space: nowrap; text-align: right">1.18x</td>
   </tr>
 </table>
 <hr/>

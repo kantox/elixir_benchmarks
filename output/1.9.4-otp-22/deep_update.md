@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-21 11:21:50.841398Z UTC
+Benchmark run from 2020-04-27 04:47:22.393669Z UTC
 
 ## System
 
@@ -21,10 +21,10 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">32 GB</td>
   </tr><tr>
     <th style="white-space: nowrap">Elixir Version</th>
-    <td style="white-space: nowrap">1.10.2</td>
+    <td style="white-space: nowrap">1.9.4</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.2.6</td>
+    <td style="white-space: nowrap">22.3.2</td>
   </tr>
 </table>
 
@@ -47,6 +47,9 @@ Benchmark suite executing with the following configuration:
 
 ## Statistics
 
+
+__Input: map__
+
 Run Time
 <table style="width: 1%">
   <tr>
@@ -58,26 +61,34 @@ Run Time
     <th style="text-align: right">99th&nbsp;%</th>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Integer.to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">12.56 M</td>
-    <td style="white-space: nowrap; text-align: right">79.59 ns</td>
-    <td style="white-space: nowrap; text-align: right">±391.13%</td>
+    <td style="white-space: nowrap">Map.update!/3</td>
+    <td style="white-space: nowrap; text-align: right">3.29 M</td>
+    <td style="white-space: nowrap; text-align: right">304.07 ns</td>
+    <td style="white-space: nowrap; text-align: right">±4285.54%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">5.95 M</td>
-    <td style="white-space: nowrap; text-align: right">167.99 ns</td>
-    <td style="white-space: nowrap; text-align: right">±2485.51%</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap; text-align: right">2.36 M</td>
+    <td style="white-space: nowrap; text-align: right">423.02 ns</td>
+    <td style="white-space: nowrap; text-align: right">±9758.73%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">concatenate inside string</td>
-    <td style="white-space: nowrap; text-align: right">4.21 M</td>
-    <td style="white-space: nowrap; text-align: right">237.65 ns</td>
-    <td style="white-space: nowrap; text-align: right">±13597.47%</td>
+    <td style="white-space: nowrap">Kernel.update_in/3</td>
+    <td style="white-space: nowrap; text-align: right">1.98 M</td>
+    <td style="white-space: nowrap; text-align: right">504.34 ns</td>
+    <td style="white-space: nowrap; text-align: right">±5454.14%</td>
+    <td style="white-space: nowrap; text-align: right">0 ns</td>
+    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">Kernel.put_in/3</td>
+    <td style="white-space: nowrap; text-align: right">1.95 M</td>
+    <td style="white-space: nowrap; text-align: right">513.13 ns</td>
+    <td style="white-space: nowrap; text-align: right">±5337.09%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
     <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
@@ -89,19 +100,24 @@ Comparison
     <th style="text-align: right">IPS</th>
     <th style="text-align: right">Slower</th>
   <tr>
-    <td style="white-space: nowrap">Integer.to_string/1</td>
-    <td style="white-space: nowrap;text-align: right">12.56 M</td>
+    <td style="white-space: nowrap">Map.update!/3</td>
+    <td style="white-space: nowrap;text-align: right">3.29 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">5.95 M</td>
-    <td style="white-space: nowrap; text-align: right">2.11x</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap; text-align: right">2.36 M</td>
+    <td style="white-space: nowrap; text-align: right">1.39x</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">concatenate inside string</td>
-    <td style="white-space: nowrap; text-align: right">4.21 M</td>
-    <td style="white-space: nowrap; text-align: right">2.99x</td>
+    <td style="white-space: nowrap">Kernel.update_in/3</td>
+    <td style="white-space: nowrap; text-align: right">1.98 M</td>
+    <td style="white-space: nowrap; text-align: right">1.66x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">Kernel.put_in/3</td>
+    <td style="white-space: nowrap; text-align: right">1.95 M</td>
+    <td style="white-space: nowrap; text-align: right">1.69x</td>
   </tr>
 </table>
 <hr/>

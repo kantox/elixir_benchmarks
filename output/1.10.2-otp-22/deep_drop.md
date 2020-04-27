@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-21 11:21:09.197330Z UTC
+Benchmark run from 2020-04-27 04:53:57.116041Z UTC
 
 ## System
 
@@ -24,7 +24,7 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">1.10.2</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.2.6</td>
+    <td style="white-space: nowrap">22.3.2</td>
   </tr>
 </table>
 
@@ -47,6 +47,9 @@ Benchmark suite executing with the following configuration:
 
 ## Statistics
 
+
+__Input: map__
+
 Run Time
 <table style="width: 1%">
   <tr>
@@ -58,28 +61,20 @@ Run Time
     <th style="text-align: right">99th&nbsp;%</th>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Integer plus 0.0</td>
-    <td style="white-space: nowrap; text-align: right">10.24 M</td>
-    <td style="white-space: nowrap; text-align: right">97.64 ns</td>
-    <td style="white-space: nowrap; text-align: right">±347.23%</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap; text-align: right">2.68 M</td>
+    <td style="white-space: nowrap; text-align: right">373.57 ns</td>
+    <td style="white-space: nowrap; text-align: right">±7689.86%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">990 ns</td>
+    <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Integer multiplied by 1.0</td>
-    <td style="white-space: nowrap; text-align: right">9.80 M</td>
-    <td style="white-space: nowrap; text-align: right">101.99 ns</td>
-    <td style="white-space: nowrap; text-align: right">±328.38%</td>
+    <td style="white-space: nowrap">Kernel.pop_in/2</td>
+    <td style="white-space: nowrap; text-align: right">2.21 M</td>
+    <td style="white-space: nowrap; text-align: right">452.56 ns</td>
+    <td style="white-space: nowrap; text-align: right">±6039.19%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">990 ns</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">String.to_float/1</td>
-    <td style="white-space: nowrap; text-align: right">2.20 M</td>
-    <td style="white-space: nowrap; text-align: right">455.40 ns</td>
-    <td style="white-space: nowrap; text-align: right">±4498.42%</td>
-    <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1990 ns</td>
+    <td style="white-space: nowrap; text-align: right">1000 ns</td>
   </tr>
 </table>
 Comparison
@@ -89,19 +84,14 @@ Comparison
     <th style="text-align: right">IPS</th>
     <th style="text-align: right">Slower</th>
   <tr>
-    <td style="white-space: nowrap">Integer plus 0.0</td>
-    <td style="white-space: nowrap;text-align: right">10.24 M</td>
+    <td style="white-space: nowrap">Map.get_and_update/3</td>
+    <td style="white-space: nowrap;text-align: right">2.68 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Integer multiplied by 1.0</td>
-    <td style="white-space: nowrap; text-align: right">9.80 M</td>
-    <td style="white-space: nowrap; text-align: right">1.04x</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">String.to_float/1</td>
-    <td style="white-space: nowrap; text-align: right">2.20 M</td>
-    <td style="white-space: nowrap; text-align: right">4.66x</td>
+    <td style="white-space: nowrap">Kernel.pop_in/2</td>
+    <td style="white-space: nowrap; text-align: right">2.21 M</td>
+    <td style="white-space: nowrap; text-align: right">1.21x</td>
   </tr>
 </table>
 <hr/>

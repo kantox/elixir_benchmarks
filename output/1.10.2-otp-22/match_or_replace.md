@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-21 11:20:03.175001Z UTC
+Benchmark run from 2020-04-27 04:57:39.273419Z UTC
 
 ## System
 
@@ -24,7 +24,7 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">1.10.2</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.2.6</td>
+    <td style="white-space: nowrap">22.3.2</td>
   </tr>
 </table>
 
@@ -47,6 +47,9 @@ Benchmark suite executing with the following configuration:
 
 ## Statistics
 
+
+__Input: str__
+
 Run Time
 <table style="width: 1%">
   <tr>
@@ -58,20 +61,20 @@ Run Time
     <th style="text-align: right">99th&nbsp;%</th>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Atom.to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">14.06 M</td>
-    <td style="white-space: nowrap; text-align: right">71.11 ns</td>
-    <td style="white-space: nowrap; text-align: right">±415.73%</td>
-    <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap">Pattern match</td>
+    <td style="white-space: nowrap; text-align: right">2.90 M</td>
+    <td style="white-space: nowrap; text-align: right">0.34 μs</td>
+    <td style="white-space: nowrap; text-align: right">±3535.81%</td>
+    <td style="white-space: nowrap; text-align: right">0 μs</td>
+    <td style="white-space: nowrap; text-align: right">1 μs</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Kernel.to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">6.33 M</td>
-    <td style="white-space: nowrap; text-align: right">157.90 ns</td>
-    <td style="white-space: nowrap; text-align: right">±2637.92%</td>
-    <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap">String replace</td>
+    <td style="white-space: nowrap; text-align: right">0.63 M</td>
+    <td style="white-space: nowrap; text-align: right">1.58 μs</td>
+    <td style="white-space: nowrap; text-align: right">±1565.36%</td>
+    <td style="white-space: nowrap; text-align: right">1 μs</td>
+    <td style="white-space: nowrap; text-align: right">2 μs</td>
   </tr>
 </table>
 Comparison
@@ -81,14 +84,14 @@ Comparison
     <th style="text-align: right">IPS</th>
     <th style="text-align: right">Slower</th>
   <tr>
-    <td style="white-space: nowrap">Atom.to_string/1</td>
-    <td style="white-space: nowrap;text-align: right">14.06 M</td>
+    <td style="white-space: nowrap">Pattern match</td>
+    <td style="white-space: nowrap;text-align: right">2.90 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Kernel.to_string/1</td>
-    <td style="white-space: nowrap; text-align: right">6.33 M</td>
-    <td style="white-space: nowrap; text-align: right">2.22x</td>
+    <td style="white-space: nowrap">String replace</td>
+    <td style="white-space: nowrap; text-align: right">0.63 M</td>
+    <td style="white-space: nowrap; text-align: right">4.57x</td>
   </tr>
 </table>
 <hr/>

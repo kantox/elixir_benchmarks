@@ -18,10 +18,7 @@ Benchee.run(
       "#{source}_#{pair}_#{tenor}"
     end
   },
-  formatters: [
-    Benchee.Formatters.Console,
-    {Benchee.Formatters.Markdown, file: KEB.output_path(__ENV__.file)}
-  ],
+  formatters: KEB.formatter(__ENV__.file),
   inputs: %{
     "map" => %{source: "foo", pair: "EURUSD", tenor: 42}
   }

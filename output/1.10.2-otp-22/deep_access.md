@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-23 05:32:50.249064Z UTC
+Benchmark run from 2020-04-27 04:53:33.553364Z UTC
 
 ## System
 
@@ -24,7 +24,7 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">1.10.2</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.2.6</td>
+    <td style="white-space: nowrap">22.3.2</td>
   </tr>
 </table>
 
@@ -62,43 +62,43 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap; text-align: right">7.81 M</td>
-    <td style="white-space: nowrap; text-align: right">127.99 ns</td>
-    <td style="white-space: nowrap; text-align: right">±4674.86%</td>
+    <td style="white-space: nowrap; text-align: right">7.89 M</td>
+    <td style="white-space: nowrap; text-align: right">126.75 ns</td>
+    <td style="white-space: nowrap; text-align: right">±5485.19%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Dots</td>
-    <td style="white-space: nowrap; text-align: right">7.63 M</td>
-    <td style="white-space: nowrap; text-align: right">131.04 ns</td>
-    <td style="white-space: nowrap; text-align: right">±4438.09%</td>
+    <td style="white-space: nowrap">Erlang map access</td>
+    <td style="white-space: nowrap; text-align: right">7.54 M</td>
+    <td style="white-space: nowrap; text-align: right">132.68 ns</td>
+    <td style="white-space: nowrap; text-align: right">±5730.48%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Map.get/2</td>
-    <td style="white-space: nowrap; text-align: right">6.69 M</td>
-    <td style="white-space: nowrap; text-align: right">149.54 ns</td>
-    <td style="white-space: nowrap; text-align: right">±3893.76%</td>
+    <td style="white-space: nowrap; text-align: right">6.72 M</td>
+    <td style="white-space: nowrap; text-align: right">148.79 ns</td>
+    <td style="white-space: nowrap; text-align: right">±4903.60%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Keywords</td>
-    <td style="white-space: nowrap; text-align: right">6.08 M</td>
-    <td style="white-space: nowrap; text-align: right">164.48 ns</td>
-    <td style="white-space: nowrap; text-align: right">±4346.91%</td>
+    <td style="white-space: nowrap">Access</td>
+    <td style="white-space: nowrap; text-align: right">6.32 M</td>
+    <td style="white-space: nowrap; text-align: right">158.13 ns</td>
+    <td style="white-space: nowrap; text-align: right">±4416.42%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Kernel.get_in/2</td>
-    <td style="white-space: nowrap; text-align: right">5.11 M</td>
-    <td style="white-space: nowrap; text-align: right">195.56 ns</td>
-    <td style="white-space: nowrap; text-align: right">±3870.44%</td>
+    <td style="white-space: nowrap; text-align: right">4.84 M</td>
+    <td style="white-space: nowrap; text-align: right">206.66 ns</td>
+    <td style="white-space: nowrap; text-align: right">±3980.40%</td>
     <td style="white-space: nowrap; text-align: right">0 ns</td>
-    <td style="white-space: nowrap; text-align: right">1000 ns</td>
+    <td style="white-space: nowrap; text-align: right">990 ns</td>
   </tr>
 </table>
 Comparison
@@ -109,28 +109,28 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap;text-align: right">7.81 M</td>
+    <td style="white-space: nowrap;text-align: right">7.89 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Dots</td>
-    <td style="white-space: nowrap; text-align: right">7.63 M</td>
-    <td style="white-space: nowrap; text-align: right">1.02x</td>
+    <td style="white-space: nowrap">Erlang map access</td>
+    <td style="white-space: nowrap; text-align: right">7.54 M</td>
+    <td style="white-space: nowrap; text-align: right">1.05x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Map.get/2</td>
-    <td style="white-space: nowrap; text-align: right">6.69 M</td>
+    <td style="white-space: nowrap; text-align: right">6.72 M</td>
     <td style="white-space: nowrap; text-align: right">1.17x</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">Keywords</td>
-    <td style="white-space: nowrap; text-align: right">6.08 M</td>
-    <td style="white-space: nowrap; text-align: right">1.29x</td>
+    <td style="white-space: nowrap">Access</td>
+    <td style="white-space: nowrap; text-align: right">6.32 M</td>
+    <td style="white-space: nowrap; text-align: right">1.25x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Kernel.get_in/2</td>
-    <td style="white-space: nowrap; text-align: right">5.11 M</td>
-    <td style="white-space: nowrap; text-align: right">1.53x</td>
+    <td style="white-space: nowrap; text-align: right">4.84 M</td>
+    <td style="white-space: nowrap; text-align: right">1.63x</td>
   </tr>
 </table>
 <hr/>
