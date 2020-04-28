@@ -1,12 +1,12 @@
 # Benchmark
 
-Benchmark run from 2020-04-27 04:52:05.957296Z UTC.
+Benchmark run from 2020-04-28 06:21:25.461511Z UTC.
 
 This file was created from `benchmarks/atom_to_string.exs`.
 
 ## Input data example
 
-    [:K, :Kh, :X9, :A, :l, :u02, :e, :_, :E3G, :c3i, :c8Vocp, :pej3nTG, :tE5, :p3UKb, :g3B71VpO, :tKbn, :ox6XWQnCK, :AVj3, :z, :_8uU, :_t4I8MMq8, :VCILPthws, :Yu, :TGupnnMh5, :sUitW9dL, :Xomt8p, :i4DKJCSia8_Y, :dCCO7vCTTQ, :w@mZlTot, :_r, :aTusCZ1t0j, :y85v, :R04WzQ, :_caGPmgses1HVNG, :b_4SWt1_3, :_r, :IWM3, :io3hdF, :_Imw3Ne4O91Np, :ZybR, :ygK6v8GJLB, :oTHq5d, :j, :gM5, :CEX74_bpgUpKZYQeI, :e@, :mX9jZPElRlFy2yI, :RyRZwX9Bp, :bGkNHeeHLARH5NuUnPJ, :eEYu1bjPNTg, ...]
+    [:A, :hQ, :h, :_, :DmS, :IH1g, :_f6, :xJDlU, :URx9DI, :WS3B2, :_, :r_, :zIZx, :_RlXVa, :XFu, :yrWFQ, :rA, :_S@, :E4Teb, :pymE, :jt, :mP7xLpBJu, :toi92ohvYK, :X, :s_XHN, :IjOycELN, :iUJ8, :Eo6W, :lF, :TkIh, :gMP1pwGIL5m, :enbSnee2, :eWP1g, :GtRVsWJw, :fBxh4, :_P8XuF, :b, :FQ@JaNNC7wp, :_QOZ, :lmlN, :rTwNhBYDF59vXL, :otshF83w, :hooJ9NxbtQ@vQT, :qdYLk, :DPXzeLjOS07tW4iPw0, :kKp2@k5LFkTznsd, :FV5EKkm1upD8, :Ux, :nIJ5lareF3t1BwMH@dj, :_tybVuvf8HJ1, ...]
 
 ## System
 
@@ -27,10 +27,10 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">32 GB</td>
   </tr><tr>
     <th style="white-space: nowrap">Elixir Version</th>
-    <td style="white-space: nowrap">1.10.2</td>
+    <td style="white-space: nowrap">1.10.3</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.3.2</td>
+    <td style="white-space: nowrap">22.3.3</td>
   </tr>
 </table>
 
@@ -68,27 +68,27 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">`Atom.to_string/1`</td>
-    <td style="white-space: nowrap; text-align: right">3.59 K</td>
-    <td style="white-space: nowrap; text-align: right">278.85 μs</td>
+    <td style="white-space: nowrap; text-align: right">3.85 K</td>
+    <td style="white-space: nowrap; text-align: right">259.87 μs</td>
     <td style="white-space: nowrap; text-align: right">±6.79%</td>
-    <td style="white-space: nowrap; text-align: right">273 μs</td>
-    <td style="white-space: nowrap; text-align: right">375 μs</td>
+    <td style="white-space: nowrap; text-align: right">257 μs</td>
+    <td style="white-space: nowrap; text-align: right">346.19 μs</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Kernel.to_string/1`</td>
-    <td style="white-space: nowrap; text-align: right">1.66 K</td>
-    <td style="white-space: nowrap; text-align: right">601.08 μs</td>
-    <td style="white-space: nowrap; text-align: right">±6.00%</td>
-    <td style="white-space: nowrap; text-align: right">592 μs</td>
-    <td style="white-space: nowrap; text-align: right">752 μs</td>
+    <td style="white-space: nowrap; text-align: right">1.83 K</td>
+    <td style="white-space: nowrap; text-align: right">546.72 μs</td>
+    <td style="white-space: nowrap; text-align: right">±6.20%</td>
+    <td style="white-space: nowrap; text-align: right">542 μs</td>
+    <td style="white-space: nowrap; text-align: right">704 μs</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">concatenate inside a string</td>
-    <td style="white-space: nowrap; text-align: right">1.29 K</td>
-    <td style="white-space: nowrap; text-align: right">777.05 μs</td>
-    <td style="white-space: nowrap; text-align: right">±4.97%</td>
-    <td style="white-space: nowrap; text-align: right">768 μs</td>
-    <td style="white-space: nowrap; text-align: right">970.44 μs</td>
+    <td style="white-space: nowrap; text-align: right">1.41 K</td>
+    <td style="white-space: nowrap; text-align: right">710.71 μs</td>
+    <td style="white-space: nowrap; text-align: right">±5.32%</td>
+    <td style="white-space: nowrap; text-align: right">706 μs</td>
+    <td style="white-space: nowrap; text-align: right">893.71 μs</td>
   </tr>
 </table>
 Comparison
@@ -99,18 +99,18 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">`Atom.to_string/1`</td>
-    <td style="white-space: nowrap;text-align: right">3.59 K</td>
+    <td style="white-space: nowrap;text-align: right">3.85 K</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Kernel.to_string/1`</td>
-    <td style="white-space: nowrap; text-align: right">1.66 K</td>
-    <td style="white-space: nowrap; text-align: right">2.16x</td>
+    <td style="white-space: nowrap; text-align: right">1.83 K</td>
+    <td style="white-space: nowrap; text-align: right">2.1x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">concatenate inside a string</td>
-    <td style="white-space: nowrap; text-align: right">1.29 K</td>
-    <td style="white-space: nowrap; text-align: right">2.79x</td>
+    <td style="white-space: nowrap; text-align: right">1.41 K</td>
+    <td style="white-space: nowrap; text-align: right">2.73x</td>
   </tr>
 </table>
 <hr/>

@@ -1,12 +1,12 @@
 # Benchmark
 
-Benchmark run from 2020-04-27 04:57:54.023829Z UTC.
+Benchmark run from 2020-04-28 06:27:10.817149Z UTC.
 
 This file was created from `benchmarks/string_to_integer.exs`.
 
 ## Input data example
 
-    ["3083698", "-2559189", "-1147124", "2267328", "680722", "-2982689", "1685024", "3425198", "330199", "3910218", "-3058803", "-1706277", "647900", "-2557537", "-1523328", "-3762457", "-4094518", "-3085108", "-3178224", "-1649502", "847666", "2989665", "2523033", "-2155080", "1294000", "3510507", "619420", "-2710128", "2961349", "2634647", "-4157519", "-3225599", "-4480338", "-4028664", "-532261", "-890210", "4562699", "-4301922", "-2279943", "-4150630", "1781576", "2041464", "-3916940", "-396033", "4351384", "4762115", "3898876", "-1910499", "3121483", "-789570", ...]
+    ["-3276", "-2022165", "-1721142", "-4041158", "-4105029", "-4627037", "-4623127", "943861", "-2348343", "-3885997", "-840795", "3858120", "-4690637", "4448976", "4240954", "4634059", "-2317709", "4491264", "2728702", "569918", "516430", "1655360", "1100550", "1995483", "-1974879", "-1104403", "-3107311", "-1763788", "580813", "-569837", "245829", "-3336442", "1435768", "-4473152", "1183261", "691344", "3072639", "2330418", "-1064960", "1170436", "-4136482", "-1879386", "-3477195", "-894368", "-3165035", "3016055", "-2843000", "-562994", "-4563392", "3370765", ...]
 
 ## System
 
@@ -27,10 +27,10 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">32 GB</td>
   </tr><tr>
     <th style="white-space: nowrap">Elixir Version</th>
-    <td style="white-space: nowrap">1.10.2</td>
+    <td style="white-space: nowrap">1.10.3</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.3.2</td>
+    <td style="white-space: nowrap">22.3.3</td>
   </tr>
 </table>
 
@@ -68,19 +68,19 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">String.to_integer/1</td>
-    <td style="white-space: nowrap; text-align: right">3.36 K</td>
-    <td style="white-space: nowrap; text-align: right">0.30 ms</td>
-    <td style="white-space: nowrap; text-align: right">±6.76%</td>
-    <td style="white-space: nowrap; text-align: right">0.29 ms</td>
-    <td style="white-space: nowrap; text-align: right">0.40 ms</td>
+    <td style="white-space: nowrap; text-align: right">3.53 K</td>
+    <td style="white-space: nowrap; text-align: right">0.28 ms</td>
+    <td style="white-space: nowrap; text-align: right">±6.49%</td>
+    <td style="white-space: nowrap; text-align: right">0.28 ms</td>
+    <td style="white-space: nowrap; text-align: right">0.37 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Integer.parse/1</td>
-    <td style="white-space: nowrap; text-align: right">0.49 K</td>
-    <td style="white-space: nowrap; text-align: right">2.05 ms</td>
-    <td style="white-space: nowrap; text-align: right">±4.28%</td>
-    <td style="white-space: nowrap; text-align: right">2.02 ms</td>
-    <td style="white-space: nowrap; text-align: right">2.45 ms</td>
+    <td style="white-space: nowrap; text-align: right">0.44 K</td>
+    <td style="white-space: nowrap; text-align: right">2.27 ms</td>
+    <td style="white-space: nowrap; text-align: right">±13.85%</td>
+    <td style="white-space: nowrap; text-align: right">2.24 ms</td>
+    <td style="white-space: nowrap; text-align: right">3.59 ms</td>
   </tr>
 </table>
 Comparison
@@ -91,13 +91,13 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">String.to_integer/1</td>
-    <td style="white-space: nowrap;text-align: right">3.36 K</td>
+    <td style="white-space: nowrap;text-align: right">3.53 K</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">Integer.parse/1</td>
-    <td style="white-space: nowrap; text-align: right">0.49 K</td>
-    <td style="white-space: nowrap; text-align: right">6.88x</td>
+    <td style="white-space: nowrap; text-align: right">0.44 K</td>
+    <td style="white-space: nowrap; text-align: right">8.01x</td>
   </tr>
 </table>
 <hr/>

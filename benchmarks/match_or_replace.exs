@@ -1,8 +1,7 @@
 Benchee.run(
   %{
-    "Pattern match" => fn str ->
-      <<_::binary-size(4)>> <> <<app::binary-size(12)>> <> <<_::binary-size(12)>> <> rest = str
-
+    "Pattern match" => fn <<_::binary-size(4)>> <>
+                            <<app::binary-size(12)>> <> <<_::binary-size(12)>> <> rest ->
       app <> rest
     end,
     "String replace" => fn str ->

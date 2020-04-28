@@ -1,5 +1,5 @@
-erlang="22.3.2"
-elixir="1.8.2 1.9.4 1.10.2"
+erlang="22.3.3"
+elixir="1.8.2 1.9.4 1.10.3"
 
 for erl in $erlang; do
   for iex in $elixir; do

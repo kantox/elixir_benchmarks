@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-04-27 04:41:52.575302Z UTC
+Benchmark run from 2020-04-28 06:11:58.193083Z UTC
 
 ## System
 
@@ -24,7 +24,7 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">1.8.2</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.3.2</td>
+    <td style="white-space: nowrap">22.3.3</td>
   </tr>
 </table>
 
@@ -64,17 +64,17 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap; text-align: right">3.02 M</td>
-    <td style="white-space: nowrap; text-align: right">0.33 μs</td>
-    <td style="white-space: nowrap; text-align: right">±2978.41%</td>
+    <td style="white-space: nowrap; text-align: right">3.12 M</td>
+    <td style="white-space: nowrap; text-align: right">0.32 μs</td>
+    <td style="white-space: nowrap; text-align: right">±3651.59%</td>
     <td style="white-space: nowrap; text-align: right">0 μs</td>
     <td style="white-space: nowrap; text-align: right">0.99 μs</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">String replace</td>
     <td style="white-space: nowrap; text-align: right">0.58 M</td>
-    <td style="white-space: nowrap; text-align: right">1.74 μs</td>
-    <td style="white-space: nowrap; text-align: right">±1233.15%</td>
+    <td style="white-space: nowrap; text-align: right">1.72 μs</td>
+    <td style="white-space: nowrap; text-align: right">±1226.70%</td>
     <td style="white-space: nowrap; text-align: right">1.99 μs</td>
     <td style="white-space: nowrap; text-align: right">1.99 μs</td>
   </tr>
@@ -88,13 +88,13 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">Pattern match</td>
-    <td style="white-space: nowrap;text-align: right">3.02 M</td>
+    <td style="white-space: nowrap;text-align: right">3.12 M</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">String replace</td>
     <td style="white-space: nowrap; text-align: right">0.58 M</td>
-    <td style="white-space: nowrap; text-align: right">5.24x</td>
+    <td style="white-space: nowrap; text-align: right">5.36x</td>
   </tr>
 </table>
 

@@ -1,12 +1,12 @@
 # Benchmark
 
-Benchmark run from 2020-04-27 04:52:27.705158Z UTC.
+Benchmark run from 2020-04-28 06:21:47.265954Z UTC.
 
 This file was created from `benchmarks/decimal_parse.exs`.
 
 ## Input data example
 
-    [-5.0e6, -5.0e6, -5.0e6, 5.0e6, -4.0625e6, -5.0e6, 5.0e6, 0.0, 5.0e6, -5.0e6, 117187.5, -1.875e6, 2.5e6, -5.0e6, -1093750.0, -673828.125, 3.75e6, 9.375e5, 244140.625, 1737060.546875, -694046.0205078125, -5.0e6, 4089965.8203125, 4327363.37184906, -830383.30078125, 1699218.75, -820312.5, -4531250.0, -3122103.214263916, 3546142.578125, -2410278.3203125, -884990.6921386719, -2736816.40625, -1718750.0, -1098632.8125, 2718174.457550049, 2290862.798690796, -5.0e6, 4566704.28487996, 2192700.26194863, 716495.5275766263, -543823.2421875, -3182823.141105473, 1860961.9140625, -1276612.8727525938, 3479048.624285497, -5.0e6, -772085.0210171193, 2941589.35546875, 1345509.0671777725, ...]
+    [-5.0e6, 0.0, 5.0e6, -5.0e6, 4.375e6, 2.5e6, 1.5625e6, -6.25e5, -6.25e5, 0.0, 0.0, 1.25e6, 0.0, -5.0e6, -2060546.875, -3828125.0, 361328.125, -2783203.125, 3855018.6157226563, -722656.25, -9.375e5, 3242187.5, 4.375e6, 5.0e6, 0.0, -3408203.125, -4650268.5546875, 2847442.626953125, -3964843.75, 463867.1875, 1918786.1680984497, -3593750.0, 4589006.304740906, 534308.3152547479, 3929538.7268066406, -4002380.37109375, -5.0e6, 761718.75, 1773861.7409486324, 2189044.952392578, 1373685.54569548, -4008027.6055959985, -4085083.0078125, -1367187.5, -2.5e6, -1796875.0, 2510950.3727844637, -4930419.921875, -2482859.6826920444, 2709121.7041015625, ...]
 
 ## System
 
@@ -27,10 +27,10 @@ Benchmark suite executing on the following system:
     <td style="white-space: nowrap">32 GB</td>
   </tr><tr>
     <th style="white-space: nowrap">Elixir Version</th>
-    <td style="white-space: nowrap">1.10.2</td>
+    <td style="white-space: nowrap">1.10.3</td>
   </tr><tr>
     <th style="white-space: nowrap">Erlang Version</th>
-    <td style="white-space: nowrap">22.3.2</td>
+    <td style="white-space: nowrap">22.3.3</td>
   </tr>
 </table>
 
@@ -68,19 +68,19 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">`Decimal.from_float/1`</td>
-    <td style="white-space: nowrap; text-align: right">35.41</td>
-    <td style="white-space: nowrap; text-align: right">28.24 ms</td>
-    <td style="white-space: nowrap; text-align: right">±1.41%</td>
-    <td style="white-space: nowrap; text-align: right">28.12 ms</td>
-    <td style="white-space: nowrap; text-align: right">29.96 ms</td>
+    <td style="white-space: nowrap; text-align: right">36.37</td>
+    <td style="white-space: nowrap; text-align: right">27.49 ms</td>
+    <td style="white-space: nowrap; text-align: right">±1.45%</td>
+    <td style="white-space: nowrap; text-align: right">27.42 ms</td>
+    <td style="white-space: nowrap; text-align: right">28.97 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Decimal.cast/1`</td>
-    <td style="white-space: nowrap; text-align: right">35.15</td>
-    <td style="white-space: nowrap; text-align: right">28.45 ms</td>
-    <td style="white-space: nowrap; text-align: right">±2.22%</td>
-    <td style="white-space: nowrap; text-align: right">28.25 ms</td>
-    <td style="white-space: nowrap; text-align: right">31.39 ms</td>
+    <td style="white-space: nowrap; text-align: right">36.34</td>
+    <td style="white-space: nowrap; text-align: right">27.52 ms</td>
+    <td style="white-space: nowrap; text-align: right">±1.58%</td>
+    <td style="white-space: nowrap; text-align: right">27.46 ms</td>
+    <td style="white-space: nowrap; text-align: right">29.31 ms</td>
   </tr>
 </table>
 Comparison
@@ -91,13 +91,13 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">`Decimal.from_float/1`</td>
-    <td style="white-space: nowrap;text-align: right">35.41</td>
+    <td style="white-space: nowrap;text-align: right">36.37</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Decimal.cast/1`</td>
-    <td style="white-space: nowrap; text-align: right">35.15</td>
-    <td style="white-space: nowrap; text-align: right">1.01x</td>
+    <td style="white-space: nowrap; text-align: right">36.34</td>
+    <td style="white-space: nowrap; text-align: right">1.0x</td>
   </tr>
 </table>
 <hr/>
