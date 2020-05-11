@@ -26,7 +26,7 @@ defmodule KEB.MixProject do
       {:decimal, "~> 1.8"},
       {:dialyxir, "~> 1.0.0", runtime: false},
       {:ex_doc, "~> 0.21"},
-      {:stream_data, "~> 0.4"}
+      {:stream_data, "~> 0.5"}
     ]
   end
 end

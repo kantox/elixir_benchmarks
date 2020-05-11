@@ -11,6 +11,7 @@ Every benchmark exports a markdown file placed in `output` directory.
 | Benchmarks        | Prefered                                  | discussion? |
 | ----------------- |-------------------------------------------| -----------:|
 | atom_to_string    | `Atom.to_string/1`                        | closed      |
+| check_zeros       | Pattern match                             | closed      |
 | decimal_parse     |                                           | opened      |
 | deep_access       | Pattern match on fun                      | opened      |
 | deep_drop         |                                           | opened      |
