@@ -1,3 +1,5 @@
+inputs = KEB.get_data(:atom)
+
 Benchee.run(
   %{
     "pattern match" => fn [head | _rest] ->
@@ -7,6 +9,6 @@ Benchee.run(
     "`List.first/1`" => &List.first/1,
     "`Enum.at/2`" => &Enum.at(&1, 0)
   },
-  formatters: KEB.formatter(__ENV__.file, :atom),
-  inputs: KEB.get_data(:atom)
+  formatters: KEB.formatter(__ENV__.file, inputs),
+  inputs: inputs
 )

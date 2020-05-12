@@ -1,3 +1,5 @@
+inputs = KEB.get_data(:integer, :to_string)
+
 Benchee.run(
   %{
     "String.to_integer/1" => fn list ->
@@ -9,6 +11,6 @@ Benchee.run(
       end)
     end
   },
-  formatters: KEB.formatter(__ENV__.file, :integer, :to_string),
-  inputs: KEB.get_data(:integer, :to_string)
+  formatters: KEB.formatter(__ENV__.file, inputs),
+  inputs: inputs
 )

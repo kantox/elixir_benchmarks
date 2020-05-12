@@ -1,3 +1,5 @@
+inputs = KEB.get_data(:integer)
+
 Benchee.run(
   %{
     "`String.to_float/1`" => fn list ->
@@ -10,6 +12,6 @@ Benchee.run(
       Enum.each(list, &(&1 + 0.0))
     end
   },
-  formatters: KEB.formatter(__ENV__.file, :integer),
-  inputs: KEB.get_data(:integer)
+  formatters: KEB.formatter(__ENV__.file, inputs),
+  inputs: inputs
 )

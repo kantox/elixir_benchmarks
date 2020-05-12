@@ -55,8 +55,8 @@ defmodule KEB do
   @doc """
   This function generates stages of a benchmark with description.
   """
-  def formatter(file, type, transform \\ :none)
-      when is_binary(file) and is_atom(type) and is_atom(transform) do
+  @spec formatter(file :: binary(), elements :: map()) :: list()
+  def formatter(file, elements) when is_binary(file) and is_map(elements) do
     [
       Benchee.Formatters.Console,
       {
@@ -68,8 +68,11 @@ defmodule KEB do
         This file was created from `#{file |> Path.split() |> Enum.take(-2) |> Path.join()}`.
 
         ## Input data example
-
-            #{inspect(do_get_data(type, transform))}
+        #{
+          elements
+          |> Enum.map(fn {title, list} -> "\n### #{title}\n\n#{inspect(list)}\n" end)
+          |> Enum.join()
+        }
         """
       }
     ]

@@ -1,3 +1,5 @@
+inputs = KEB.get_data(:atom)
+
 Benchee.run(
   %{
     "`Atom.to_string/1`" => fn list ->
@@ -10,6 +12,6 @@ Benchee.run(
       Enum.each(list, &"#{&1}")
     end
   },
-  formatters: KEB.formatter(__ENV__.file, :atom),
-  inputs: KEB.get_data(:atom)
+  formatters: KEB.formatter(__ENV__.file, inputs),
+  inputs: inputs
 )

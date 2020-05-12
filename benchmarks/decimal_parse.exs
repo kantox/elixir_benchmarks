@@ -1,3 +1,5 @@
+inputs = KEB.get_data(:float)
+
 Benchee.run(
   %{
     "`Decimal.from_float/1`" => fn list ->
@@ -7,6 +9,6 @@ Benchee.run(
       Enum.each(list, &Decimal.cast/1)
     end
   },
-  formatters: KEB.formatter(__ENV__.file, :float),
-  inputs: KEB.get_data(:float)
+  formatters: KEB.formatter(__ENV__.file, inputs),
+  inputs: inputs
 )
