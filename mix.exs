@@ -23,7 +23,7 @@ defmodule KEB.MixProject do
     [
       {:benchee, "~> 1.0"},
       {:benchee_markdown, "~> 0.2"},
-      {:decimal, "~> 1.8"},
+      {:decimal, "~> 2.0"},
       {:dialyxir, "~> 1.0.0", runtime: false},
       {:ex_doc, "~> 0.21"},
       {:stream_data, "~> 0.5"}

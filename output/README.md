@@ -7,6 +7,7 @@ repo.
 ## 1.10.3-otp-22
 
 * [atom_to_string.md](1.10.3-otp-22/atom_to_string.md)
+* [check_zeros.md](1.10.3-otp-22/check_zeros.md)
 * [decimal_parse.md](1.10.3-otp-22/decimal_parse.md)
 * [deep_access.md](1.10.3-otp-22/deep_access.md)
 * [deep_drop.md](1.10.3-otp-22/deep_drop.md)
@@ -23,6 +24,7 @@ repo.
 ## 1.8.2-otp-22
 
 * [atom_to_string.md](1.8.2-otp-22/atom_to_string.md)
+* [check_zeros.md](1.8.2-otp-22/check_zeros.md)
 * [decimal_parse.md](1.8.2-otp-22/decimal_parse.md)
 * [deep_access.md](1.8.2-otp-22/deep_access.md)
 * [deep_drop.md](1.8.2-otp-22/deep_drop.md)
@@ -39,6 +41,7 @@ repo.
 ## 1.9.4-otp-22
 
 * [atom_to_string.md](1.9.4-otp-22/atom_to_string.md)
+* [check_zeros.md](1.9.4-otp-22/check_zeros.md)
 * [decimal_parse.md](1.9.4-otp-22/decimal_parse.md)
 * [deep_access.md](1.9.4-otp-22/deep_access.md)
 * [deep_drop.md](1.9.4-otp-22/deep_drop.md)
