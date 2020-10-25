@@ -1,6 +1,6 @@
 # Benchmark
 
-Benchmark run from 2020-10-20 07:02:23.467936Z UTC
+Benchmark run from 2020-10-22 09:56:53.067657Z UTC
 
 ## System
 
@@ -12,10 +12,10 @@ Benchmark suite executing on the following system:
     <td>macOS</td>
   </tr><tr>
     <th style="white-space: nowrap">CPU Information</th>
-    <td style="white-space: nowrap">Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz</td>
+    <td style="white-space: nowrap">Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz</td>
   </tr><tr>
     <th style="white-space: nowrap">Number of Available Cores</th>
-    <td style="white-space: nowrap">6</td>
+    <td style="white-space: nowrap">4</td>
   </tr><tr>
     <th style="white-space: nowrap">Available Memory</th>
     <td style="white-space: nowrap">32 GB</td>
@@ -48,7 +48,81 @@ Benchmark suite executing with the following configuration:
 ## Statistics
 
 
-__Input: of binary (10000 on the list)__
+__Input: list of Decimals (10,000 elements)__
+
+Run Time
+<table style="width: 1%">
+  <tr>
+    <th>Name</th>
+    <th style="text-align: right">IPS</th>
+    <th style="text-align: right">Average</th>
+    <th style="text-align: right">Devitation</th>
+    <th style="text-align: right">Median</th>
+    <th style="text-align: right">99th&nbsp;%</th>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap; text-align: right">1.79 K</td>
+    <td style="white-space: nowrap; text-align: right">559.87 μs</td>
+    <td style="white-space: nowrap; text-align: right">±14.35%</td>
+    <td style="white-space: nowrap; text-align: right">534 μs</td>
+    <td style="white-space: nowrap; text-align: right">869.97 μs</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">1.62 K</td>
+    <td style="white-space: nowrap; text-align: right">618.34 μs</td>
+    <td style="white-space: nowrap; text-align: right">±11.96%</td>
+    <td style="white-space: nowrap; text-align: right">593 μs</td>
+    <td style="white-space: nowrap; text-align: right">944 μs</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal`</td>
+    <td style="white-space: nowrap; text-align: right">1.18 K</td>
+    <td style="white-space: nowrap; text-align: right">849.28 μs</td>
+    <td style="white-space: nowrap; text-align: right">±14.92%</td>
+    <td style="white-space: nowrap; text-align: right">805 μs</td>
+    <td style="white-space: nowrap; text-align: right">1436.29 μs</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">1.07 K</td>
+    <td style="white-space: nowrap; text-align: right">932.90 μs</td>
+    <td style="white-space: nowrap; text-align: right">±10.44%</td>
+    <td style="white-space: nowrap; text-align: right">895 μs</td>
+    <td style="white-space: nowrap; text-align: right">1319.24 μs</td>
+  </tr>
+</table>
+Comparison
+<table style="width: 1%">
+  <tr>
+    <th>Name</th>
+    <th style="text-align: right">IPS</th>
+    <th style="text-align: right">Slower</th>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap;text-align: right">1.79 K</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">1.62 K</td>
+    <td style="white-space: nowrap; text-align: right">1.1x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal`</td>
+    <td style="white-space: nowrap; text-align: right">1.18 K</td>
+    <td style="white-space: nowrap; text-align: right">1.52x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">1.07 K</td>
+    <td style="white-space: nowrap; text-align: right">1.67x</td>
+  </tr>
+</table>
+<hr/>
+
+__Input: list of binaries (10,000 elements)__
 
 Run Time
 <table style="width: 1%">
@@ -62,35 +136,35 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">149.19</td>
-    <td style="white-space: nowrap; text-align: right">6.70 ms</td>
-    <td style="white-space: nowrap; text-align: right">±5.44%</td>
-    <td style="white-space: nowrap; text-align: right">6.63 ms</td>
-    <td style="white-space: nowrap; text-align: right">7.71 ms</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">148.88</td>
-    <td style="white-space: nowrap; text-align: right">6.72 ms</td>
-    <td style="white-space: nowrap; text-align: right">±5.12%</td>
-    <td style="white-space: nowrap; text-align: right">6.65 ms</td>
-    <td style="white-space: nowrap; text-align: right">7.75 ms</td>
+    <td style="white-space: nowrap; text-align: right">155.27</td>
+    <td style="white-space: nowrap; text-align: right">6.44 ms</td>
+    <td style="white-space: nowrap; text-align: right">±6.68%</td>
+    <td style="white-space: nowrap; text-align: right">6.33 ms</td>
+    <td style="white-space: nowrap; text-align: right">7.81 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">148.24</td>
-    <td style="white-space: nowrap; text-align: right">6.75 ms</td>
-    <td style="white-space: nowrap; text-align: right">±5.12%</td>
-    <td style="white-space: nowrap; text-align: right">6.68 ms</td>
-    <td style="white-space: nowrap; text-align: right">7.72 ms</td>
+    <td style="white-space: nowrap; text-align: right">154.25</td>
+    <td style="white-space: nowrap; text-align: right">6.48 ms</td>
+    <td style="white-space: nowrap; text-align: right">±4.23%</td>
+    <td style="white-space: nowrap; text-align: right">6.41 ms</td>
+    <td style="white-space: nowrap; text-align: right">7.93 ms</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap; text-align: right">153.88</td>
+    <td style="white-space: nowrap; text-align: right">6.50 ms</td>
+    <td style="white-space: nowrap; text-align: right">±4.90%</td>
+    <td style="white-space: nowrap; text-align: right">6.41 ms</td>
+    <td style="white-space: nowrap; text-align: right">7.95 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">146.05</td>
-    <td style="white-space: nowrap; text-align: right">6.85 ms</td>
-    <td style="white-space: nowrap; text-align: right">±5.01%</td>
-    <td style="white-space: nowrap; text-align: right">6.79 ms</td>
-    <td style="white-space: nowrap; text-align: right">7.87 ms</td>
+    <td style="white-space: nowrap; text-align: right">151.41</td>
+    <td style="white-space: nowrap; text-align: right">6.60 ms</td>
+    <td style="white-space: nowrap; text-align: right">±4.62%</td>
+    <td style="white-space: nowrap; text-align: right">6.52 ms</td>
+    <td style="white-space: nowrap; text-align: right">7.86 ms</td>
   </tr>
 </table>
 Comparison
@@ -101,28 +175,28 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap;text-align: right">149.19</td>
+    <td style="white-space: nowrap;text-align: right">155.27</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">148.88</td>
-    <td style="white-space: nowrap; text-align: right">1.0x</td>
+    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">154.25</td>
+    <td style="white-space: nowrap; text-align: right">1.01x</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">148.24</td>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap; text-align: right">153.88</td>
     <td style="white-space: nowrap; text-align: right">1.01x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">146.05</td>
-    <td style="white-space: nowrap; text-align: right">1.02x</td>
+    <td style="white-space: nowrap; text-align: right">151.41</td>
+    <td style="white-space: nowrap; text-align: right">1.03x</td>
   </tr>
 </table>
 <hr/>
 
-__Input: of decimal (10000 on the list)__
+__Input: list of floats (10,000 elements)__
 
 Run Time
 <table style="width: 1%">
@@ -136,35 +210,35 @@ Run Time
   </tr>
   <tr>
     <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">4.05 K</td>
-    <td style="white-space: nowrap; text-align: right">247.03 μs</td>
-    <td style="white-space: nowrap; text-align: right">±10.04%</td>
-    <td style="white-space: nowrap; text-align: right">242 μs</td>
-    <td style="white-space: nowrap; text-align: right">362 μs</td>
+    <td style="white-space: nowrap; text-align: right">61.48</td>
+    <td style="white-space: nowrap; text-align: right">16.27 ms</td>
+    <td style="white-space: nowrap; text-align: right">±2.39%</td>
+    <td style="white-space: nowrap; text-align: right">16.16 ms</td>
+    <td style="white-space: nowrap; text-align: right">18.25 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">3.45 K</td>
-    <td style="white-space: nowrap; text-align: right">289.78 μs</td>
-    <td style="white-space: nowrap; text-align: right">±9.81%</td>
-    <td style="white-space: nowrap; text-align: right">285 μs</td>
-    <td style="white-space: nowrap; text-align: right">406.22 μs</td>
+    <td style="white-space: nowrap; text-align: right">60.58</td>
+    <td style="white-space: nowrap; text-align: right">16.51 ms</td>
+    <td style="white-space: nowrap; text-align: right">±3.39%</td>
+    <td style="white-space: nowrap; text-align: right">16.36 ms</td>
+    <td style="white-space: nowrap; text-align: right">18.90 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">3.10 K</td>
-    <td style="white-space: nowrap; text-align: right">322.30 μs</td>
-    <td style="white-space: nowrap; text-align: right">±13.66%</td>
-    <td style="white-space: nowrap; text-align: right">312 μs</td>
-    <td style="white-space: nowrap; text-align: right">476 μs</td>
+    <td style="white-space: nowrap; text-align: right">59.80</td>
+    <td style="white-space: nowrap; text-align: right">16.72 ms</td>
+    <td style="white-space: nowrap; text-align: right">±1.96%</td>
+    <td style="white-space: nowrap; text-align: right">16.62 ms</td>
+    <td style="white-space: nowrap; text-align: right">18.47 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">2.58 K</td>
-    <td style="white-space: nowrap; text-align: right">387.23 μs</td>
-    <td style="white-space: nowrap; text-align: right">±11.17%</td>
-    <td style="white-space: nowrap; text-align: right">377 μs</td>
-    <td style="white-space: nowrap; text-align: right">537 μs</td>
+    <td style="white-space: nowrap; text-align: right">59.32</td>
+    <td style="white-space: nowrap; text-align: right">16.86 ms</td>
+    <td style="white-space: nowrap; text-align: right">±1.97%</td>
+    <td style="white-space: nowrap; text-align: right">16.75 ms</td>
+    <td style="white-space: nowrap; text-align: right">18.10 ms</td>
   </tr>
 </table>
 Comparison
@@ -175,245 +249,171 @@ Comparison
     <th style="text-align: right">Slower</th>
   <tr>
     <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap;text-align: right">4.05 K</td>
+    <td style="white-space: nowrap;text-align: right">61.48</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">3.45 K</td>
-    <td style="white-space: nowrap; text-align: right">1.17x</td>
+    <td style="white-space: nowrap; text-align: right">60.58</td>
+    <td style="white-space: nowrap; text-align: right">1.01x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">3.10 K</td>
-    <td style="white-space: nowrap; text-align: right">1.3x</td>
+    <td style="white-space: nowrap; text-align: right">59.80</td>
+    <td style="white-space: nowrap; text-align: right">1.03x</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">2.58 K</td>
-    <td style="white-space: nowrap; text-align: right">1.57x</td>
-  </tr>
-</table>
-<hr/>
-
-__Input: of float (10000 on the list)__
-
-Run Time
-<table style="width: 1%">
-  <tr>
-    <th>Name</th>
-    <th style="text-align: right">IPS</th>
-    <th style="text-align: right">Average</th>
-    <th style="text-align: right">Devitation</th>
-    <th style="text-align: right">Median</th>
-    <th style="text-align: right">99th&nbsp;%</th>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">42.54</td>
-    <td style="white-space: nowrap; text-align: right">23.51 ms</td>
-    <td style="white-space: nowrap; text-align: right">±2.42%</td>
-    <td style="white-space: nowrap; text-align: right">23.38 ms</td>
-    <td style="white-space: nowrap; text-align: right">25.43 ms</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">42.42</td>
-    <td style="white-space: nowrap; text-align: right">23.57 ms</td>
-    <td style="white-space: nowrap; text-align: right">±2.68%</td>
-    <td style="white-space: nowrap; text-align: right">23.38 ms</td>
-    <td style="white-space: nowrap; text-align: right">25.58 ms</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">42.37</td>
-    <td style="white-space: nowrap; text-align: right">23.60 ms</td>
-    <td style="white-space: nowrap; text-align: right">±2.55%</td>
-    <td style="white-space: nowrap; text-align: right">23.48 ms</td>
-    <td style="white-space: nowrap; text-align: right">25.07 ms</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">42.36</td>
-    <td style="white-space: nowrap; text-align: right">23.61 ms</td>
-    <td style="white-space: nowrap; text-align: right">±2.55%</td>
-    <td style="white-space: nowrap; text-align: right">23.48 ms</td>
-    <td style="white-space: nowrap; text-align: right">25.40 ms</td>
-  </tr>
-</table>
-Comparison
-<table style="width: 1%">
-  <tr>
-    <th>Name</th>
-    <th style="text-align: right">IPS</th>
-    <th style="text-align: right">Slower</th>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap;text-align: right">42.54</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">42.42</td>
-    <td style="white-space: nowrap; text-align: right">1.0x</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">42.37</td>
-    <td style="white-space: nowrap; text-align: right">1.0x</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">42.36</td>
-    <td style="white-space: nowrap; text-align: right">1.0x</td>
-  </tr>
-</table>
-<hr/>
-
-__Input: of improper data (10000 on the list)__
-
-Run Time
-<table style="width: 1%">
-  <tr>
-    <th>Name</th>
-    <th style="text-align: right">IPS</th>
-    <th style="text-align: right">Average</th>
-    <th style="text-align: right">Devitation</th>
-    <th style="text-align: right">Median</th>
-    <th style="text-align: right">99th&nbsp;%</th>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">4.13 K</td>
-    <td style="white-space: nowrap; text-align: right">241.97 μs</td>
-    <td style="white-space: nowrap; text-align: right">±9.29%</td>
-    <td style="white-space: nowrap; text-align: right">237 μs</td>
-    <td style="white-space: nowrap; text-align: right">334.59 μs</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">3.45 K</td>
-    <td style="white-space: nowrap; text-align: right">289.69 μs</td>
-    <td style="white-space: nowrap; text-align: right">±7.00%</td>
-    <td style="white-space: nowrap; text-align: right">286 μs</td>
-    <td style="white-space: nowrap; text-align: right">383.27 μs</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">2.97 K</td>
-    <td style="white-space: nowrap; text-align: right">336.67 μs</td>
-    <td style="white-space: nowrap; text-align: right">±7.85%</td>
-    <td style="white-space: nowrap; text-align: right">332 μs</td>
-    <td style="white-space: nowrap; text-align: right">457.17 μs</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">2.48 K</td>
-    <td style="white-space: nowrap; text-align: right">402.46 μs</td>
-    <td style="white-space: nowrap; text-align: right">±6.92%</td>
-    <td style="white-space: nowrap; text-align: right">401 μs</td>
-    <td style="white-space: nowrap; text-align: right">528 μs</td>
-  </tr>
-</table>
-Comparison
-<table style="width: 1%">
-  <tr>
-    <th>Name</th>
-    <th style="text-align: right">IPS</th>
-    <th style="text-align: right">Slower</th>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap;text-align: right">4.13 K</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">3.45 K</td>
-    <td style="white-space: nowrap; text-align: right">1.2x</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">2.97 K</td>
-    <td style="white-space: nowrap; text-align: right">1.39x</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">2.48 K</td>
-    <td style="white-space: nowrap; text-align: right">1.66x</td>
-  </tr>
-</table>
-<hr/>
-
-__Input: of integer (10000 on the list)__
-
-Run Time
-<table style="width: 1%">
-  <tr>
-    <th>Name</th>
-    <th style="text-align: right">IPS</th>
-    <th style="text-align: right">Average</th>
-    <th style="text-align: right">Devitation</th>
-    <th style="text-align: right">Median</th>
-    <th style="text-align: right">99th&nbsp;%</th>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap; text-align: right">1.92 K</td>
-    <td style="white-space: nowrap; text-align: right">520.74 μs</td>
-    <td style="white-space: nowrap; text-align: right">±13.77%</td>
-    <td style="white-space: nowrap; text-align: right">498 μs</td>
-    <td style="white-space: nowrap; text-align: right">665.34 μs</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">1.84 K</td>
-    <td style="white-space: nowrap; text-align: right">544.13 μs</td>
-    <td style="white-space: nowrap; text-align: right">±13.34%</td>
-    <td style="white-space: nowrap; text-align: right">522 μs</td>
-    <td style="white-space: nowrap; text-align: right">686 μs</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">1.62 K</td>
-    <td style="white-space: nowrap; text-align: right">616.45 μs</td>
-    <td style="white-space: nowrap; text-align: right">±12.70%</td>
-    <td style="white-space: nowrap; text-align: right">620 μs</td>
-    <td style="white-space: nowrap; text-align: right">792.51 μs</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">1.55 K</td>
-    <td style="white-space: nowrap; text-align: right">646.71 μs</td>
-    <td style="white-space: nowrap; text-align: right">±8.98%</td>
-    <td style="white-space: nowrap; text-align: right">651 μs</td>
-    <td style="white-space: nowrap; text-align: right">806.94 μs</td>
-  </tr>
-</table>
-Comparison
-<table style="width: 1%">
-  <tr>
-    <th>Name</th>
-    <th style="text-align: right">IPS</th>
-    <th style="text-align: right">Slower</th>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type`</td>
-    <td style="white-space: nowrap;text-align: right">1.92 K</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">1.84 K</td>
+    <td style="white-space: nowrap; text-align: right">59.32</td>
     <td style="white-space: nowrap; text-align: right">1.04x</td>
   </tr>
+</table>
+<hr/>
+
+__Input: list of integers (10,000 elements)__
+
+Run Time
+<table style="width: 1%">
+  <tr>
+    <th>Name</th>
+    <th style="text-align: right">IPS</th>
+    <th style="text-align: right">Average</th>
+    <th style="text-align: right">Devitation</th>
+    <th style="text-align: right">Median</th>
+    <th style="text-align: right">99th&nbsp;%</th>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap; text-align: right">1069.57</td>
+    <td style="white-space: nowrap; text-align: right">0.93 ms</td>
+    <td style="white-space: nowrap; text-align: right">±8.77%</td>
+    <td style="white-space: nowrap; text-align: right">0.91 ms</td>
+    <td style="white-space: nowrap; text-align: right">1.31 ms</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">967.38</td>
+    <td style="white-space: nowrap; text-align: right">1.03 ms</td>
+    <td style="white-space: nowrap; text-align: right">±9.23%</td>
+    <td style="white-space: nowrap; text-align: right">1.00 ms</td>
+    <td style="white-space: nowrap; text-align: right">1.42 ms</td>
+  </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal`</td>
-    <td style="white-space: nowrap; text-align: right">1.62 K</td>
-    <td style="white-space: nowrap; text-align: right">1.18x</td>
+    <td style="white-space: nowrap; text-align: right">774.07</td>
+    <td style="white-space: nowrap; text-align: right">1.29 ms</td>
+    <td style="white-space: nowrap; text-align: right">±11.66%</td>
+    <td style="white-space: nowrap; text-align: right">1.24 ms</td>
+    <td style="white-space: nowrap; text-align: right">1.93 ms</td>
   </tr>
   <tr>
     <td style="white-space: nowrap">`Cast decimal` with default fun</td>
-    <td style="white-space: nowrap; text-align: right">1.55 K</td>
-    <td style="white-space: nowrap; text-align: right">1.24x</td>
+    <td style="white-space: nowrap; text-align: right">729.14</td>
+    <td style="white-space: nowrap; text-align: right">1.37 ms</td>
+    <td style="white-space: nowrap; text-align: right">±10.10%</td>
+    <td style="white-space: nowrap; text-align: right">1.32 ms</td>
+    <td style="white-space: nowrap; text-align: right">1.99 ms</td>
+  </tr>
+</table>
+Comparison
+<table style="width: 1%">
+  <tr>
+    <th>Name</th>
+    <th style="text-align: right">IPS</th>
+    <th style="text-align: right">Slower</th>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap;text-align: right">1069.57</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">967.38</td>
+    <td style="white-space: nowrap; text-align: right">1.11x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal`</td>
+    <td style="white-space: nowrap; text-align: right">774.07</td>
+    <td style="white-space: nowrap; text-align: right">1.38x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">729.14</td>
+    <td style="white-space: nowrap; text-align: right">1.47x</td>
+  </tr>
+</table>
+<hr/>
+
+__Input: list of mix of values (10,000 elements, including invalid values)__
+
+Run Time
+<table style="width: 1%">
+  <tr>
+    <th>Name</th>
+    <th style="text-align: right">IPS</th>
+    <th style="text-align: right">Average</th>
+    <th style="text-align: right">Devitation</th>
+    <th style="text-align: right">Median</th>
+    <th style="text-align: right">99th&nbsp;%</th>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap; text-align: right">162.12</td>
+    <td style="white-space: nowrap; text-align: right">6.17 ms</td>
+    <td style="white-space: nowrap; text-align: right">±3.17%</td>
+    <td style="white-space: nowrap; text-align: right">6.13 ms</td>
+    <td style="white-space: nowrap; text-align: right">6.98 ms</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal`</td>
+    <td style="white-space: nowrap; text-align: right">159.93</td>
+    <td style="white-space: nowrap; text-align: right">6.25 ms</td>
+    <td style="white-space: nowrap; text-align: right">±3.31%</td>
+    <td style="white-space: nowrap; text-align: right">6.20 ms</td>
+    <td style="white-space: nowrap; text-align: right">6.96 ms</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">158.36</td>
+    <td style="white-space: nowrap; text-align: right">6.31 ms</td>
+    <td style="white-space: nowrap; text-align: right">±3.62%</td>
+    <td style="white-space: nowrap; text-align: right">6.26 ms</td>
+    <td style="white-space: nowrap; text-align: right">7.18 ms</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">156.80</td>
+    <td style="white-space: nowrap; text-align: right">6.38 ms</td>
+    <td style="white-space: nowrap; text-align: right">±4.48%</td>
+    <td style="white-space: nowrap; text-align: right">6.30 ms</td>
+    <td style="white-space: nowrap; text-align: right">7.79 ms</td>
+  </tr>
+</table>
+Comparison
+<table style="width: 1%">
+  <tr>
+    <th>Name</th>
+    <th style="text-align: right">IPS</th>
+    <th style="text-align: right">Slower</th>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type`</td>
+    <td style="white-space: nowrap;text-align: right">162.12</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal`</td>
+    <td style="white-space: nowrap; text-align: right">159.93</td>
+    <td style="white-space: nowrap; text-align: right">1.01x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Parse decimal by type` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">158.36</td>
+    <td style="white-space: nowrap; text-align: right">1.02x</td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap">`Cast decimal` with default fun</td>
+    <td style="white-space: nowrap; text-align: right">156.80</td>
+    <td style="white-space: nowrap; text-align: right">1.03x</td>
   </tr>
 </table>
 <hr/>

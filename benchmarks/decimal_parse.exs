@@ -40,19 +40,46 @@ Benchee.run(
   },
   formatters: KEB.formatter(__ENV__.file),
   inputs:
-    KEB.get_data(:float)
-    |> Map.merge(KEB.get_data(:integer))
-    |> Map.put_new(
-      "of binary (10000 on the list)",
-      KEB.get_data(:float) |> Map.values() |> List.first() |> Enum.map(&Float.to_string/1)
-    )
-    |> Map.put_new(
-      "of decimal (10000 on the list)",
-      KEB.get_data(:float) |> Map.values() |> List.first() |> Enum.map(&Decimal.from_float/1)
-    )
-    |> Map.put_new(
-      "of improper data (10000 on the list)",
-      Enum.take(StreamData.maybe_improper_list_of(StreamData.byte(), StreamData.binary()), 10_000)
-    )
+    %{
+      "list of integers (10,000 elements)" =>
+        StreamData.integer()
+        |> StreamData.list_of(length: 10_000)
+        |> StreamData.seeded(42)
+        |> Enum.take(1)
+        |> Enum.concat(),
+      "list of floats (10,000 elements)" =>
+        StreamData.float()
+        |> StreamData.list_of(length: 10_000)
+        |> StreamData.seeded(42)
+        |> Enum.take(1)
+        |> Enum.concat(),
+      "list of binaries (10,000 elements)" =>
+        [StreamData.integer(), StreamData.float()]
+        |> StreamData.one_of()
+        |> StreamData.map(&to_string/1)
+        |> StreamData.list_of(length: 10_000)
+        |> StreamData.seeded(42)
+        |> Enum.take(1)
+        |> Enum.concat(),
+      "list of Decimals (10,000 elements)" =>
+        StreamData.integer()
+        |> StreamData.map(&Decimal.new/1)
+        |> StreamData.list_of(length: 10_000)
+        |> StreamData.seeded(42)
+        |> Enum.take(1)
+        |> Enum.concat(),
+      "list of mix of values (10,000 elements, including invalid values)" =>
+        [
+          StreamData.integer(),
+          StreamData.float(),
+          StreamData.integer() |> StreamData.map(&Decimal.new/1),
+          StreamData.string(?a..?z, length: 4)
+        ]
+        |> StreamData.one_of()
+        |> StreamData.list_of(length: 10_000)
+        |> StreamData.seeded(42)
+        |> Enum.take(1)
+        |> Enum.concat()
+    }
     |> IO.inspect()
 )
