@@ -40,46 +40,15 @@ Benchee.run(
   },
   formatters: KEB.formatter(__ENV__.file),
   inputs:
-    %{
-      "list of integers (10,000 elements)" =>
-        StreamData.integer()
-        |> StreamData.list_of(length: 10_000)
-        |> StreamData.seeded(42)
-        |> Enum.take(1)
-        |> Enum.concat(),
-      "list of floats (10,000 elements)" =>
-        StreamData.float()
-        |> StreamData.list_of(length: 10_000)
-        |> StreamData.seeded(42)
-        |> Enum.take(1)
-        |> Enum.concat(),
-      "list of binaries (10,000 elements)" =>
-        [StreamData.integer(), StreamData.float()]
-        |> StreamData.one_of()
-        |> StreamData.map(&to_string/1)
-        |> StreamData.list_of(length: 10_000)
-        |> StreamData.seeded(42)
-        |> Enum.take(1)
-        |> Enum.concat(),
-      "list of Decimals (10,000 elements)" =>
-        StreamData.integer()
-        |> StreamData.map(&Decimal.new/1)
-        |> StreamData.list_of(length: 10_000)
-        |> StreamData.seeded(42)
-        |> Enum.take(1)
-        |> Enum.concat(),
-      "list of mix of values (10,000 elements, including invalid values)" =>
-        [
-          StreamData.integer(),
-          StreamData.float(),
-          StreamData.integer() |> StreamData.map(&Decimal.new/1),
-          StreamData.string(?a..?z, length: 4)
-        ]
-        |> StreamData.one_of()
-        |> StreamData.list_of(length: 10_000)
-        |> StreamData.seeded(42)
-        |> Enum.take(1)
-        |> Enum.concat()
-    }
-    |> IO.inspect()
+    KEB.get_data([Float, Integer])
+    |> Map.merge(KEB.get_data([Float, Integer], :to_string))
+    |> Map.merge(KEB.get_data([Float, Integer], Decimal))
+    |> Map.merge(
+      KEB.get_from_streamdata_list([
+        StreamData.integer(),
+        StreamData.float(),
+        StreamData.integer() |> StreamData.map(&Decimal.new/1),
+        StreamData.string(?a..?z, length: 4)
+      ])
+    )
 )

@@ -1,4 +1,4 @@
-inputs = KEB.get_data(:float, :to_string)
+inputs = KEB.get_data(Float, :to_string)
 
 Benchee.run(
   %{

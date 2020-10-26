@@ -1,4 +1,4 @@
-inputs = KEB.get_data(:integer)
+inputs = KEB.get_data(Integer)
 
 Benchee.run(
   %{

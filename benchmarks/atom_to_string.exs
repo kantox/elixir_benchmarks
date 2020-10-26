@@ -1,4 +1,4 @@
-inputs = KEB.get_data(:atom)
+inputs = KEB.get_data(Atom)
 
 Benchee.run(
   %{

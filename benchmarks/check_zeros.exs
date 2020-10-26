@@ -2,6 +2,7 @@ defmodule Check do
   @typep zero :: Decimal.t() | integer() | binary()
 
   @spec decimal_zero?(n :: zero()) :: boolean()
+  def decimal_zero?(n) when is_float(n), do: decimal_zero?(Decimal.from_float(n))
   def decimal_zero?(n), do: Decimal.eq?(n, 0)
 
   @spec zero?(zero()) :: boolean()
@@ -23,18 +24,13 @@ Benchee.run(
     end
   },
   formatters: KEB.formatter(__ENV__.file),
-  inputs: %{
-    "Decimal" =>
-      StreamData.member_of([
-        Decimal.cast(0.0),
-        Decimal.cast(0),
-        Decimal.cast(1),
-        Decimal.cast(1.0),
-        Decimal.cast(-1),
-        Decimal.cast(-1.0)
-      ])
-      |> Enum.take(10_000),
-    "Integer" => StreamData.integer(-1..1) |> Enum.take(10_000),
-    "Binary" => StreamData.member_of(["0", "0.0", "-1", "-1.0", "1", "1.0"]) |> Enum.take(10_000)
-  }
+  inputs:
+    KEB.get_from_streamdata_list([
+      StreamData.float(min: -1, max: 1),
+      StreamData.integer(-1..1),
+      StreamData.float(min: -1, max: 1) |> StreamData.map(&Decimal.from_float/1),
+      StreamData.integer(-1..1) |> StreamData.map(&Decimal.new/1),
+      StreamData.float(min: -1, max: 1) |> StreamData.map(&to_string/1),
+      StreamData.integer(-1..1) |> StreamData.map(&to_string/1)
+    ])
 )

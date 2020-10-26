@@ -7,27 +7,45 @@ defmodule KEB do
 
   @qty 10_000
 
-  @types ~w|atom integer float string|a
+  @limit 5_000_000
 
-  @transforms ~w|none to_string|a
+  @modules [Atom, Integer, Float, String]
+
+  @transforms [Decimal, :none, :to_string]
+
+  @typedoc "Generate data types"
+  @type generate_data_types :: atom() | integer() | float() | binary()
 
   @doc """
   This function is a wrapper to `StreamData` that allows to generate data
   dynamically.
-
 
   It's called from some benchmark files to receive desired data used like an entry
   point. If receives a type in the first argument and one optional to apply
   transformations on generated data. It sends a list of #{@qty} items to minimize
   differences in the generated data between different executions.
 
-  Implemented types:
+  Implemented modules:
 
-  * #{Enum.join(@types, "\n* ")}
+  * #{Enum.join(@modules, "\n* ")}
   """
-  @spec get_data(type :: atom(), transform :: atom()) :: [atom() | integer() | float() | binary()]
-  def get_data(type, transform \\ :none) when type in @types and transform in @transforms do
-    %{"of #{type} (#{@qty} on the list)" => do_get_data(type, transform)}
+  @spec get_data(module() | [module()], transform :: atom()) :: [generate_data_types()]
+  def get_data(module, transform \\ :none)
+
+  def get_data(module, transform) when module in @modules and transform in @transforms do
+    get_data([module], transform)
+  end
+
+  def get_data(modules, transform) when is_list(modules) do
+    modules_str = modules |> module_to_atom() |> Enum.join("/")
+
+    %{"of #{modules_str} (#{@qty} elements)" => generate_data(modules, transform)}
+  end
+
+  def get_from_streamdata_list(stream) when is_list(stream) do
+    data = stream |> StreamData.one_of() |> do_export()
+
+    %{"of mixed data (#{@qty} elements)" => data}
   end
 
   @doc """
@@ -38,7 +56,7 @@ defmodule KEB do
       iex> KEB.formatter("benchmarks/my_benchmark.exs")
       [
         Benchee.Formatters.Console,
-        {Benchee.Formatters.Markdown, file: "output/1.10.2-otp-22/my_benchmark.md"}
+        {Benchee.Formatters.Markdown, file: "output/1.10.3-otp-22/my_benchmark.md"}
       ]
   """
   @spec formatter(file :: binary()) :: list()
@@ -91,12 +109,24 @@ defmodule KEB do
 
   ############################################################################
 
-  @spec get_data(type :: atom(), transform :: atom()) :: [atom() | integer() | float() | binary()]
-  defp do_get_data(type, transform) do
-    StreamData
-    |> apply(type, [range(type)])
-    |> transform(type, transform)
-    |> Enum.take(@qty)
+  @spec generate_data(types :: module(), transform :: atom()) :: [generate_data_types()]
+  defp generate_data(types, transform) when is_list(types) do
+    for t <- types do
+      StreamData
+      |> apply(module_to_atom(t), options(t))
+      |> transform(t, transform)
+    end
+    |> StreamData.one_of()
+    |> do_export()
+  end
+
+  @spec do_export(StreamData.t()) :: [generate_data_types()]
+  defp do_export(data) do
+    data
+    |> StreamData.list_of(length: 10_000)
+    |> StreamData.seeded(42)
+    |> Enum.take(1)
+    |> Enum.concat()
   end
 
   ############################################################################
@@ -109,22 +139,36 @@ defmodule KEB do
 
   ############################################################################
 
-  @spec limit() :: integer()
-  defp limit, do: 5_000_000
-
-  @spec range(type :: atom()) :: list() | atom()
-  defp range(:float), do: [min: -limit(), max: limit()]
-  defp range(:integer), do: -limit()..limit()
-  defp range(_), do: :alphanumeric
+  @spec options(type :: module()) :: Keyword.t() | Range.t() | atom()
+  defp options(Float), do: [[min: -@limit, max: @limit]]
+  defp options(Integer), do: [-@limit..@limit]
+  defp options(String), do: [:alphanumeric, [length: 4]]
+  defp options(_), do: [:alphanumeric]
 
   ############################################################################
 
-  @spec transform(data :: Stream.t(), from :: atom(), to :: atom()) :: Stream.t()
+  @spec transform(data :: Stream.t(), module :: module(), to :: atom()) :: Stream.t()
   defp transform(data, _from, :none), do: data
 
-  defp transform(data, from, to) do
-    module = Module.concat([from |> Atom.to_string() |> Macro.camelize()])
+  defp transform(data, _module, :to_string) do
+    StreamData.map(data, &to_string/1)
+  end
 
-    Stream.map(data, &apply(module, to, [&1]))
+  defp transform(data, _module, Decimal) do
+    StreamData.map(data, fn e ->
+      case Decimal.cast(e) do
+        {:ok, t} -> t
+        :error -> :error
+      end
+    end)
+  end
+
+  ############################################################################
+
+  @spec module_to_atom(module() | [module()]) :: atom()
+  defp module_to_atom(modules) when is_list(modules), do: Enum.map(modules, &module_to_atom/1)
+
+  defp module_to_atom(module) do
+    module |> Module.split() |> hd() |> String.downcase() |> String.to_atom()
   end
 end
